@@ -12,41 +12,39 @@ __author__    = "Elias Ibañez"
 __email__    = "eibanezpl@gmail.com"
 __license__    = "GPL V3"
 
-def main():
+def main(numero1, operador, numero2):
     """
-    >>> 1 + 2
+    >>> main (1, "+", 2)
     3
-    >>> 50 - 30
+    >>> main (50, "-", 30)
     20
-    >>> 10 % 5
+    >>> main (10, "%", 5)
     0
-    >>> 200 / 20
+    >>> main (200, "/", 20)
     10.0
-    >>> 52 // 6
+    >>> main (52, "//", 6)
     8
-    >>> 12 * 16
+    >>> main (12, "*", 16)
     192
-    >>> 5 ** 5
+    >>> main (5, "**", 5)
     3125
     """
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
 
-    if sys.argv[2] =="+":
-        print(a + b)
-    elif sys.argv[2] =="-":
-        print(a - b)
-    elif sys.argv[2] =="*":
-        print(a * b)
-    elif sys.argv[2] =="/":
-        print(a / b)
-    elif sys.argv[2] =="//":
-        print(a // b)
-    elif sys.argv[2] =="%":
-        print(a % b)
-    elif sys.argv[2] =="**":
-        print(a ** b)
+    if operador =="+":
+        return(numero1 + numero2)
+    elif operador =="-":
+        return(numero1 - numero2)
+    elif operador =="*":
+        return(numero1 * numero2)
+    elif operador =="/":
+        return(numero1 / numero2)
+    elif operador =="//":
+        return(numero1 // numero2)
+    elif operador =="%":
+        return(numero1 % numero2)
+    elif operador =="**":
+        return(numero1 ** numero2)     
     else:
-        print("Error, formula millor l'operació")
+        return("Error, formula millor l'operació")
 if __name__ == "__main__":
-    main()
+    print(main(int(sys.argv[1]),sys.argv[2],int(sys.argv[3])))
